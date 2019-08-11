@@ -1,0 +1,18 @@
+digraph CircularDoble {
+	node [height=.1 shape=record]
+	<__main__.NodoDoble object at 0x03773250> [label="<f0> |<f1> Phospholite|<f2>"]
+	<__main__.NodoDoble object at 0x03773250> -> <__main__.NodoDoble object at 0x037731F0>
+	<__main__.NodoDoble object at 0x03773250> -> <__main__.NodoDoble object at 0x0375FEF0>
+	<__main__.NodoDoble object at 0x037731F0> [label="<f0> |<f1> Valentina|<f2>"]
+	<__main__.NodoDoble object at 0x037731F0> -> <__main__.NodoDoble object at 0x037731D0>
+	<__main__.NodoDoble object at 0x037731F0> -> <__main__.NodoDoble object at 0x03773250>
+	<__main__.NodoDoble object at 0x037731D0> [label="<f0> |<f1> Shiro|<f2>"]
+	<__main__.NodoDoble object at 0x037731D0> -> <__main__.NodoDoble object at 0x0375FF50>
+	<__main__.NodoDoble object at 0x037731D0> -> <__main__.NodoDoble object at 0x037731F0>
+	<__main__.NodoDoble object at 0x0375FF50> [label="<f0> |<f1> Dylan|<f2>"]
+	<__main__.NodoDoble object at 0x0375FF50> -> <__main__.NodoDoble object at 0x0375FEF0>
+	<__main__.NodoDoble object at 0x0375FF50> -> <__main__.NodoDoble object at 0x037731D0>
+	<__main__.NodoDoble object at 0x0375FEF0> [label="<f0> |<f1> Jimena-chan|<f2>"]
+	<__main__.NodoDoble object at 0x0375FEF0> -> <__main__.NodoDoble object at 0x03773250>
+	<__main__.NodoDoble object at 0x0375FEF0> -> <__main__.NodoDoble object at 0x0375FF50>
+}
