@@ -29,10 +29,11 @@ while key != 27:
         key = opcion        
 
     if opcion == ord('1'):
-        window.addstr(17,22,'entra 1')
         os.system("python Snake.py")        
     elif opcion == ord('2'):
         window.addstr(17,22,'entra 2') 
+    elif opcion == ord('3'):
+        os.system("python Usuarios.py")  
     else:
         window.addstr(17,22,'Invalido')
         window.timeout(1000) 

@@ -2,6 +2,8 @@ import curses, os #import the curses library
 from curses import KEY_UP
 from graphviz import Digraph, nohtml
 
+actual = 0
+tama = 0
 
 class NodoDoble():
     def __init__(self, valor):
@@ -35,15 +37,24 @@ class CircularDoble():
 
 
     def obtener(self, index):
+        tama = self.size
         if self.estaVacia():
             print("La lista esta vacia")
         else:
+            actual = index
+            if actual < 0:
+                actual = tama
+            elif actual > tama:
+                actual = 0            
             temp = self.inicio
             contar = 0
             while(temp != None):
-                if index == contar:
-                    print(temp.valor)
+                if actual == contar:
+                    window.addstr(13, 22, "                               ")
+                    window.addstr(13,22,str("<- " + temp.valor + " ->"))
                 temp = temp.sig
+                if temp == self.fin.sig:
+                    break
                 contar +=1
     
     def prueba(self):
@@ -85,7 +96,6 @@ lista.insertar_inicio(str("Phospholite"))
 #lista.graf2()
 
 #lista.obtener()
-        
 
 stdscr = curses.initscr() #initialize console
 height = 25
@@ -101,14 +111,17 @@ window.border(0)        #default border for our window
 window.nodelay(True)    #return -1 when no key is pressed
 
 key = KEY_UP
-
 while key != 27:
-    lista.prueba()
+    lista.obtener(actual)
     window.timeout(-2)    
     opcion = window.getch()
     if opcion is not -1:  
         key = opcion  
-curses.endwin()
+    if opcion == curses.KEY_RIGHT:
+        actual += 1
+    if opcion == curses.KEY_LEFT:
+        actual -= 1
+   
 
 
 
