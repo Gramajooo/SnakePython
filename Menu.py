@@ -33,22 +33,25 @@ while key != 27:
         key = opcion        
 
     if opcion == ord('1'):
-        os.system("python MenuUser.py")        
+        os.system("python Snake.py")        
     elif opcion == ord('2'):
-        os.system("python Snake.py")
+        os.system("python Scoreboard.py")
     elif opcion == ord('3'):
-        os.system("python MenuUser.py")  
+        os.system("python Usuarios.py")  
     elif opcion == ord('4'):
-        os.system("python Usuarios.py")
+        os.system("python Reportes.py")
     elif opcion == ord('5'):
         lista.cargamasiva()
+        window.addstr(17,22,'Cargado correctamente')
+        window.timeout(1000) 
+        window.getch()
+        window.addstr(17,22,'                           ')
     else:
         window.addstr(17,22,'Invalido')
         window.timeout(1000) 
         window.getch()
         window.addstr(17,22,'         ')
 
-#lista.graf2()
 curses.endwin()
 
 

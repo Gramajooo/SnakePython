@@ -3,8 +3,12 @@ from curses import KEY_RIGHT, KEY_LEFT, KEY_UP, KEY_DOWN
 from graphviz import Digraph, nohtml
 from random import randint, uniform,random
 from ListaDoble import ListaDoble
+from Pila import Pila
+
+pila = Pila()
 
 lista = ListaDoble()
+lista = lista.getLista()
 
 stdscr = curses.initscr() 
 height = 20
@@ -23,7 +27,7 @@ pos_x = 5
 pos_y = 5               
 
 score = 0 
-user = "Jimena-chan"
+user = lista.getNickname()
 
 window.addstr(0,3," Score: " + str(score) + " ")  
 window.addstr(0,17," SNAKE RELOADED ")  
@@ -59,12 +63,14 @@ while key != 27:
         window.addch(auxry, auxrx, '*') 
         arreglo = [[pos_y, pos_x+1]] 
         lista.insertar_inicio(arreglo)
+        pila.push("comida", arreglo)
     if pos_x == auxrx and pos_y == auxry:           
         score -=1
         window.addstr(0,3," Score: " + str(score) + " ")
         auxrx = randint(2,57)
         auxry = randint(2,17)
         window.addch(auxry, auxrx, '*')
+        pila.push("veneno", arreglo)
         if score < 0:
             os.system("python GameOver.py")  
         if lista.getSize() > 3:
@@ -121,3 +127,4 @@ while key != 27:
 
 
 lista.graf2()
+pila.graf2()

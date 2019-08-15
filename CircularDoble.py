@@ -23,16 +23,16 @@ class CircularDoble():
         return self.inicio
 
     def getFin(self):
-        return  self.fin
+        return self.fin
 
     def cargamasiva(self):
         with open('usuarios.csv') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                aux = row['Usuario;']
+                aux = row['Usuario']
                 names = aux.replace(";","")
                 self.insertar_inicio(str(names))
-                print(str(names))
+        self.graf2()
 
     def insertar_inicio(self, valor):
         nuevo = NodoDoble(valor)
@@ -51,7 +51,7 @@ class CircularDoble():
   
     def graf2(self):      
 
-        g = Digraph('CircularDoble', filename='grafica.dot', format='jpg' , node_attr={'shape': 'record', 'height': '.1'})
+        g = Digraph('CircularDoble', filename='grafica4.dot', format='jpg' , node_attr={'shape': 'record', 'height': '.1'})
         temp = self.inicio
         g.graph_attr['rankdir'] = 'LR'
         while(temp != None):
@@ -63,7 +63,7 @@ class CircularDoble():
                 break
                     
         g.save()
-        os.system("dot grafica.dot -o imagen.jpg -Tjpg -Gcharset=utf8")
+        os.system("dot grafica4.dot -o imagen4.jpg -Tjpg -Gcharset=utf8")
 
 lista = CircularDoble()
-lista.graf2()
+lista.cargamasiva()

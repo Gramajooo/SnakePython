@@ -1,4 +1,0 @@
-digraph CircularDoble {
-	graph [rankdir=LR]
-	node [height=.1 shape=record]
-}

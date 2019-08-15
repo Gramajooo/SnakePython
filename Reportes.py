@@ -1,4 +1,4 @@
-import curses, os 
+import curses, os
 from curses import KEY_UP
 
 stdscr = curses.initscr() 
@@ -14,10 +14,12 @@ curses.curs_set(0)
 window.border(0)        
 window.nodelay(True)    
 
-key = KEY_UP
+key = 0
 
-window.addstr(9,22,'1. New User')   
-window.addstr(10,22,'2. Choose User')    
+window.addstr(9,22,'1. Snake Report')   
+window.addstr(10,22,'2. Score Report')   
+window.addstr(11,22,'3. Scoreboard Report')   
+window.addstr(12,22,'4. Users Reports')   
 
 while key != 27:
     window.timeout(-1)    
@@ -25,10 +27,15 @@ while key != 27:
     if opcion is not -1:  
         key = opcion        
 
+
     if opcion == ord('1'):
-        os.system("python Snake.py")        
-    elif opcion == ord('2'):
-        os.system("python Usuarios.py")  
+        os.system("imagen1.jpg")  
+    if opcion == ord('2') :
+        os.system("imagen2.jpg") 
+    if opcion == ord('3'):
+        os.system("imagen3.jpg") 
+    if opcion == ord('4'):
+        os.system("imagen4.jpg")      
     else:
         window.addstr(17,22,'Invalido')
         window.timeout(1000) 

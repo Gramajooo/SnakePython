@@ -1,0 +1,16 @@
+digraph ListaDoble {
+	graph [rankdir=LR]
+	node [height=.1 shape=record]
+	<ListaDoble.NodoDoble object at 0x03525DD0> [label="<f0> |<f1> [[5, 13]]|<f2>"]
+	<ListaDoble.NodoDoble object at 0x03525DD0> -> <ListaDoble.NodoDoble object at 0x03525CD0>
+	<ListaDoble.NodoDoble object at 0x03525DD0> -> None
+	<ListaDoble.NodoDoble object at 0x03525CD0> [label="<f0> |<f1> [[5, 13]]|<f2>"]
+	<ListaDoble.NodoDoble object at 0x03525CD0> -> <ListaDoble.NodoDoble object at 0x03525D70>
+	<ListaDoble.NodoDoble object at 0x03525CD0> -> <ListaDoble.NodoDoble object at 0x03525DD0>
+	<ListaDoble.NodoDoble object at 0x03525D70> [label="<f0> |<f1> [[5, 12]]|<f2>"]
+	<ListaDoble.NodoDoble object at 0x03525D70> -> <ListaDoble.NodoDoble object at 0x03525D50>
+	<ListaDoble.NodoDoble object at 0x03525D70> -> <ListaDoble.NodoDoble object at 0x03525CD0>
+	<ListaDoble.NodoDoble object at 0x03525D50> [label="<f0> |<f1> [[5, 11]]|<f2>"]
+	<ListaDoble.NodoDoble object at 0x03525D50> -> None
+	<ListaDoble.NodoDoble object at 0x03525D50> -> <ListaDoble.NodoDoble object at 0x03525D70>
+}

@@ -1,3 +1,6 @@
+import os
+from graphviz import Digraph, nohtml
+
 class NodoPi():
     def __init__(self, x, y):
         self.x = x
@@ -22,9 +25,9 @@ class Pila():
         if temp is None:
             print("La pila esta vacia")
         else:
-            while temp is not None:
-                
-                temp = temp.sigprint(temp.x, ",", temp.y)
+            while temp is not None:                
+                temp = temp.sig
+                print(temp.x, ",", temp.y)
 
     def peek(self):
         if self.cabeza is None:
@@ -32,17 +35,20 @@ class Pila():
         else:
             print("quitar: " + str(self.cabeza.x + "," + self.cabeza.y))
 
-    def pop(self):
+    def graf2(self):      
+
+        g = Digraph('Pila', filename='grafica2.dot',  format='jpg' , node_attr={'shape': 'record', 'height': '.1'})
         temp = self.cabeza
-        self.cabeza = self.cabeza.sig
+        g.graph_attr['rankdir'] = 'LR'
+        while(temp != None): 
+                       
+            g.node(str(temp), nohtml('<f0> |<f1> '+str(temp.x)+','+str(temp.y)+'|<f2>'))
+            g.edge(str(temp),str(temp.sig))
+            temp = temp.sig 
+     
+        g.save()
+        os.system("dot grafica2.dot -o imagen2.jpg -Tjpg -Gcharset=utf8")
+        
 
-
-
-
-P = Pila()
-P.push(0,0)
-P.push(1, 1)
-P.push(2, 2)
-P.impri()
 
 

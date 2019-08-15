@@ -1,7 +1,7 @@
 
 import os
 from graphviz import Digraph, nohtml
-
+nickname = ""
 class NodoDoble():
     def __init__(self, valor):
         self.sig = None
@@ -13,9 +13,19 @@ class ListaDoble():
         self.inicio = None
         self.fin = None
         self.size = 0
+        self.nickname = ""
     
     def getSize(self):
         return self.size
+
+    def getLista(self):
+        return ll
+
+    def setNickname(self, name):
+        self.nickname = name 
+
+    def getNickname(self):
+        return self.nickname
         
     def getFinal(self):
         return self.fin.valor
@@ -81,7 +91,7 @@ class ListaDoble():
 
     def graf2(self):      
 
-        g = Digraph('ListaDoble', filename='grafica.dot',  format='jpg' , node_attr={'shape': 'record', 'height': '.1'})
+        g = Digraph('ListaDoble', filename='grafica1.dot',  format='jpg' , node_attr={'shape': 'record', 'height': '.1'})
         temp = self.inicio
         g.graph_attr['rankdir'] = 'LR'
         while(temp != None): 
@@ -92,48 +102,9 @@ class ListaDoble():
             temp = temp.sig 
      
         g.save()
-        os.system("dot grafica.dot -o imagen.jpg -Tjpg -Gcharset=utf8")
+        os.system("dot grafica1.dot -o imagen1.jpg -Tjpg -Gcharset=utf8")
         
-        
-        """
-lista = ListaDoble()
 
-
-#INSERCIONES AL INICIO
-lista.insertar_inicio(100)
-lista.insertar_inicio(200)
-lista.insertar_inicio(300)
-lista.insertar_inicio(400)
-lista.insertar_inicio(500)
-
-
-
-#INSERCIONES AL FINAL
-lista.insertar_final(10)
-lista.insertar_final(20)
-lista.insertar_final(30)
-lista.insertar_final(40)
-lista.insertar_final(50)
-
-#GRAFICAR
-lista.graf2()
-
-#INSERTAR EN POSICION
-lista.insertar_pos(3,777)
-lista.insertar_pos(8,999)
-
-#GRAFICAR
-lista.graf2()
-
-#OBTENER EL VALOR DE ELEMENTO DE LA LISTA
-lista.obtener(3)
-
-#ELIMINAR POR POSICION
-lista.eliminar(7)
-
-#GRAFICAR
-lista.graf2()
-"""
-
-
+ll = ListaDoble()
+val = ll.getNickname() 
 

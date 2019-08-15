@@ -2,10 +2,13 @@ import curses, os #import the curses library
 from curses import KEY_UP
 from graphviz import Digraph, nohtml
 from CircularDoble import CircularDoble
+from ListaDoble import ListaDoble
+
+ld = ListaDoble()
+ld = ld.getLista()
 
 lista = CircularDoble()
 lista = lista.getLista()
-
 
 stdscr = curses.initscr() 
 height = 25
@@ -36,8 +39,8 @@ else:
         opcion = window.getch()
         if opcion == curses.KEY_UP: 
             nickname = temp.valor
-            print(nickname)
-            key = 27
+            ld.setNickname(nickname)
+            break
         if opcion is not -1:  
             key = opcion  
         if lista.estaVacia():
