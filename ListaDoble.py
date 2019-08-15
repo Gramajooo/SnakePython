@@ -13,20 +13,20 @@ class ListaDoble():
         self.inicio = None
         self.fin = None
         self.size = 0
+    
+    def getSize(self):
+        return self.size
+        
+    def getFinal(self):
+        return self.fin.valor
+
+    def eliminarCola(self):
+        self.fin = self.fin.ant
+        self.fin.sig = None
+        self.size -= 1
 
     def estaVacia(self):
         return self.inicio is None
-
-    def insertar_final(self, valor):
-        nuevo = NodoDoble(valor)
-        if self.estaVacia():
-            self.inicio = nuevo
-            self.fin = nuevo
-        else:
-            self.fin.sig = nuevo
-            nuevo.ant = self.fin
-            self.fin = nuevo
-        self.size +=1
 
     def insertar_inicio(self, valor):
         nuevo = NodoDoble(valor)
@@ -38,34 +38,6 @@ class ListaDoble():
             nuevo.sig = self.inicio
             self.inicio = nuevo
         self.size += 1
-
-    def insertar_pos(self, index, valor):
-        nuevo = NodoDoble(valor)
-        if self.estaVacia():
-            print("La lista esta vacia")
-        else:
-            if index >= 0 and index <= self.size:
-                temp = self.inicio
-                contar = 0
-                if index == 0:
-                    self.insertar_inicio(valor)
-                    self.size +=1
-                else:
-                    if index == self.size-1:
-                        self.insertar_final(valor)
-                        self.size +=1
-                    else:
-                        while(temp.sig != None):   
-                            if contar == index:
-                                nuevo.ant = temp.ant
-                                temp.ant.sig = nuevo
-                                nuevo.sig = temp
-                                temp.ant = nuevo                              
-                                self.size += 1
-                            temp = temp.sig
-                            contar += 1
-            else:
-                print("Invalido")
     
     def eliminar(self, index):
         if self.estaVacia():
@@ -109,9 +81,11 @@ class ListaDoble():
 
     def graf2(self):      
 
-        g = Digraph('ListaDoble', filename='grafica.dot', format='jpg' , node_attr={'shape': 'record', 'height': '.1'})
+        g = Digraph('ListaDoble', filename='grafica.dot',  format='jpg' , node_attr={'shape': 'record', 'height': '.1'})
         temp = self.inicio
-        while(temp != None):
+        g.graph_attr['rankdir'] = 'LR'
+        while(temp != None): 
+                       
             g.node(str(temp), nohtml('<f0> |<f1> '+str(temp.valor)+'|<f2>'))
             g.edge(str(temp),str(temp.sig))
             g.edge(str(temp),str(temp.ant))
@@ -119,9 +93,11 @@ class ListaDoble():
      
         g.save()
         os.system("dot grafica.dot -o imagen.jpg -Tjpg -Gcharset=utf8")
-
-
+        
+        
+        """
 lista = ListaDoble()
+
 
 #INSERCIONES AL INICIO
 lista.insertar_inicio(100)
@@ -129,6 +105,8 @@ lista.insertar_inicio(200)
 lista.insertar_inicio(300)
 lista.insertar_inicio(400)
 lista.insertar_inicio(500)
+
+
 
 #INSERCIONES AL FINAL
 lista.insertar_final(10)
@@ -155,5 +133,7 @@ lista.eliminar(7)
 
 #GRAFICAR
 lista.graf2()
+"""
+
 
 

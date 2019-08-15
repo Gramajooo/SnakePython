@@ -72,6 +72,7 @@ class CircularDoble():
 
         g = Digraph('CircularDoble', filename='grafica.dot', format='jpg' , node_attr={'shape': 'record', 'height': '.1'})
         temp = self.inicio
+        g.graph_attr['rankdir'] = 'LR'
         while(temp != None):
             g.node(str(temp), nohtml('<f0> |<f1> ' + str(temp.valor) + '|<f2>'), )
             g.edge(str(temp), str(temp.sig))
@@ -112,9 +113,12 @@ window.nodelay(True)    #return -1 when no key is pressed
 
 key = KEY_UP
 while key != 27:
+    
     lista.obtener(actual)
-    window.timeout(-2)    
+
+    window.timeout(-1)    
     opcion = window.getch()
+
     if opcion is not -1:  
         key = opcion  
     if opcion == curses.KEY_RIGHT:

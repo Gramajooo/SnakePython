@@ -1,6 +1,5 @@
-import os, curses
+import curses, os
 from graphviz import Digraph, nohtml
-
 class NodoDoble():
     def __init__(self, valor):
         self.sig = None
@@ -32,17 +31,37 @@ class CircularDoble():
         self.size += 1
 
 
+    def obtener(self, index):
+        tama = self.size
+        if self.estaVacia():
+            print("La lista esta vacia")
+        else:
+            actual = index
+            if actual < 0:
+                actual = tama
+            elif actual > tama:
+                actual = 0            
+            temp = self.inicio
+            contar = 0
+            while(temp != None):
+                if actual == contar:
+                    window.addstr(13, 22, "                               ")
+                    window.addstr(13,22,str("<- " + temp.valor + " ->"))
+                temp = temp.sig
+                if temp == self.fin.sig:
+                    break
+                contar +=1
+    
     def prueba(self):
         temp = self.inicio
         posiy = 9
         while(temp != None):
-            print(posiy,22,str(temp.valor))
             window.addstr(posiy,22,str(temp.valor))
             temp = temp.sig 
             posiy += 1
             if temp == self.fin.sig:
                 break
-    
+
 
     def graf2(self):      
 
@@ -59,15 +78,3 @@ class CircularDoble():
         g.save()
         os.system("dot grafica.dot -o imagen.jpg -Tjpg -Gcharset=utf8")
 
-lista = CircularDoble()
-
-#INSERCIONES AL INICIO
-lista.insertar_inicio(str("Jimena-chan"))
-lista.insertar_inicio(str("Dylan"))
-lista.insertar_inicio(str("Shiro"))
-lista.insertar_inicio(str("Valentina"))
-lista.insertar_inicio(str("Phospholite"))
-
-#lista.graf2()
-
-#lista.obtener()

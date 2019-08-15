@@ -1,4 +1,4 @@
-import curses, os, csv #import the curses library
+import curses, os #import the curses library
 from curses import KEY_UP
 
 stdscr = curses.initscr() #initialize console
@@ -16,11 +16,8 @@ window.nodelay(True)    #return -1 when no key is pressed
 
 key = KEY_UP
 
-window.addstr(9,22,'1. Play')   
-window.addstr(10,22,'2. Scoreboard')   
-window.addstr(11,22,'3. User Selection')   
-window.addstr(12,22,'4. Reports')   
-window.addstr(13,22,'5. Bulk Loading')  
+window.addstr(9,22,'1. New User')   
+window.addstr(10,22,'2. Choose User')    
 
 while key != 27:
     window.timeout(-2)    
@@ -29,18 +26,9 @@ while key != 27:
         key = opcion        
 
     if opcion == ord('1'):
-        os.system("python MenuUser.py")        
+        os.system("python Snake.py")        
     elif opcion == ord('2'):
-        os.system("python Snake.py")
-    elif opcion == ord('3'):
         os.system("python Usuarios.py")  
-    elif opcion == ord('4'):
-        print("Reportes")
-    elif opcion == ord('5'):
-        with open('usuarios.csv') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                print(row['Usuario;'])
     else:
         window.addstr(17,22,'Invalido')
         window.timeout(1000) 
