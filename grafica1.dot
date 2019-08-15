@@ -1,16 +1,19 @@
 digraph ListaDoble {
 	graph [rankdir=LR]
 	node [height=.1 shape=record]
-	<ListaDoble.NodoDoble object at 0x03525DD0> [label="<f0> |<f1> [[5, 13]]|<f2>"]
-	<ListaDoble.NodoDoble object at 0x03525DD0> -> <ListaDoble.NodoDoble object at 0x03525CD0>
-	<ListaDoble.NodoDoble object at 0x03525DD0> -> None
-	<ListaDoble.NodoDoble object at 0x03525CD0> [label="<f0> |<f1> [[5, 13]]|<f2>"]
-	<ListaDoble.NodoDoble object at 0x03525CD0> -> <ListaDoble.NodoDoble object at 0x03525D70>
-	<ListaDoble.NodoDoble object at 0x03525CD0> -> <ListaDoble.NodoDoble object at 0x03525DD0>
-	<ListaDoble.NodoDoble object at 0x03525D70> [label="<f0> |<f1> [[5, 12]]|<f2>"]
-	<ListaDoble.NodoDoble object at 0x03525D70> -> <ListaDoble.NodoDoble object at 0x03525D50>
-	<ListaDoble.NodoDoble object at 0x03525D70> -> <ListaDoble.NodoDoble object at 0x03525CD0>
-	<ListaDoble.NodoDoble object at 0x03525D50> [label="<f0> |<f1> [[5, 11]]|<f2>"]
-	<ListaDoble.NodoDoble object at 0x03525D50> -> None
-	<ListaDoble.NodoDoble object at 0x03525D50> -> <ListaDoble.NodoDoble object at 0x03525D70>
+	<ListaDoble.NodoDoble object at 0x02E55EB0> [label="<f0> |<f1> [[17, 48]]|<f2>"]
+	<ListaDoble.NodoDoble object at 0x02E55EB0> -> <ListaDoble.NodoDoble object at 0x02E55E90>
+	<ListaDoble.NodoDoble object at 0x02E55EB0> -> None
+	<ListaDoble.NodoDoble object at 0x02E55E90> [label="<f0> |<f1> [[17, 47]]|<f2>"]
+	<ListaDoble.NodoDoble object at 0x02E55E90> -> <ListaDoble.NodoDoble object at 0x02E55EF0>
+	<ListaDoble.NodoDoble object at 0x02E55E90> -> <ListaDoble.NodoDoble object at 0x02E55EB0>
+	<ListaDoble.NodoDoble object at 0x02E55EF0> [label="<f0> |<f1> [[17, 46]]|<f2>"]
+	<ListaDoble.NodoDoble object at 0x02E55EF0> -> <ListaDoble.NodoDoble object at 0x02E55F30>
+	<ListaDoble.NodoDoble object at 0x02E55EF0> -> <ListaDoble.NodoDoble object at 0x02E55E90>
+	<ListaDoble.NodoDoble object at 0x02E55F30> [label="<f0> |<f1> [[17, 45]]|<f2>"]
+	<ListaDoble.NodoDoble object at 0x02E55F30> -> <ListaDoble.NodoDoble object at 0x02E55F70>
+	<ListaDoble.NodoDoble object at 0x02E55F30> -> <ListaDoble.NodoDoble object at 0x02E55EF0>
+	<ListaDoble.NodoDoble object at 0x02E55F70> [label="<f0> |<f1> [[17, 44]]|<f2>"]
+	<ListaDoble.NodoDoble object at 0x02E55F70> -> None
+	<ListaDoble.NodoDoble object at 0x02E55F70> -> <ListaDoble.NodoDoble object at 0x02E55F30>
 }

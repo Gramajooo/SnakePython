@@ -35,7 +35,8 @@ while key != 27:
     if opcion == ord('1'):
         os.system("python Snake.py")        
     elif opcion == ord('2'):
-        os.system("python Scoreboard.py")
+        window.addstr(17,22,'                           ')
+        #os.system("python Scoreboard.py")
     elif opcion == ord('3'):
         os.system("python Usuarios.py")  
     elif opcion == ord('4'):

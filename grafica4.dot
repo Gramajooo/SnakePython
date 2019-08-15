@@ -1,16 +1,28 @@
 digraph CircularDoble {
 	graph [rankdir=LR]
 	node [height=.1 shape=record]
-	<CircularDoble.NodoDoble object at 0x00F4DA50> [label="<f0> |<f1> Andrea|<f2>"]
-	<CircularDoble.NodoDoble object at 0x00F4DA50> -> <CircularDoble.NodoDoble object at 0x00F4DA70>
-	<CircularDoble.NodoDoble object at 0x00F4DA50> -> <CircularDoble.NodoDoble object at 0x00F3DE50>
-	<CircularDoble.NodoDoble object at 0x00F4DA70> [label="<f0> |<f1> Adriana|<f2>"]
-	<CircularDoble.NodoDoble object at 0x00F4DA70> -> <CircularDoble.NodoDoble object at 0x00F4D730>
-	<CircularDoble.NodoDoble object at 0x00F4DA70> -> <CircularDoble.NodoDoble object at 0x00F4DA50>
-	<CircularDoble.NodoDoble object at 0x00F4D730> [label="<f0> |<f1> Dylan|<f2>"]
-	<CircularDoble.NodoDoble object at 0x00F4D730> -> <CircularDoble.NodoDoble object at 0x00F3DE50>
-	<CircularDoble.NodoDoble object at 0x00F4D730> -> <CircularDoble.NodoDoble object at 0x00F4DA70>
-	<CircularDoble.NodoDoble object at 0x00F3DE50> [label="<f0> |<f1> Jimena|<f2>"]
-	<CircularDoble.NodoDoble object at 0x00F3DE50> -> <CircularDoble.NodoDoble object at 0x00F4DA50>
-	<CircularDoble.NodoDoble object at 0x00F3DE50> -> <CircularDoble.NodoDoble object at 0x00F4D730>
+	<CircularDoble.NodoDoble object at 0x03214730> [label="<f0> |<f1> Andrea|<f2>"]
+	<CircularDoble.NodoDoble object at 0x03214730> -> <CircularDoble.NodoDoble object at 0x032146F0>
+	<CircularDoble.NodoDoble object at 0x03214730> -> <CircularDoble.NodoDoble object at 0x031FDE30>
+	<CircularDoble.NodoDoble object at 0x032146F0> [label="<f0> |<f1> Adriana|<f2>"]
+	<CircularDoble.NodoDoble object at 0x032146F0> -> <CircularDoble.NodoDoble object at 0x03214610>
+	<CircularDoble.NodoDoble object at 0x032146F0> -> <CircularDoble.NodoDoble object at 0x03214730>
+	<CircularDoble.NodoDoble object at 0x03214610> [label="<f0> |<f1> Dylan|<f2>"]
+	<CircularDoble.NodoDoble object at 0x03214610> -> <CircularDoble.NodoDoble object at 0x03214670>
+	<CircularDoble.NodoDoble object at 0x03214610> -> <CircularDoble.NodoDoble object at 0x032146F0>
+	<CircularDoble.NodoDoble object at 0x03214670> [label="<f0> |<f1> Jimena|<f2>"]
+	<CircularDoble.NodoDoble object at 0x03214670> -> <CircularDoble.NodoDoble object at 0x0320D9F0>
+	<CircularDoble.NodoDoble object at 0x03214670> -> <CircularDoble.NodoDoble object at 0x03214610>
+	<CircularDoble.NodoDoble object at 0x0320D9F0> [label="<f0> |<f1> Andrea|<f2>"]
+	<CircularDoble.NodoDoble object at 0x0320D9F0> -> <CircularDoble.NodoDoble object at 0x0320DA10>
+	<CircularDoble.NodoDoble object at 0x0320D9F0> -> <CircularDoble.NodoDoble object at 0x03214670>
+	<CircularDoble.NodoDoble object at 0x0320DA10> [label="<f0> |<f1> Adriana|<f2>"]
+	<CircularDoble.NodoDoble object at 0x0320DA10> -> <CircularDoble.NodoDoble object at 0x0320D7B0>
+	<CircularDoble.NodoDoble object at 0x0320DA10> -> <CircularDoble.NodoDoble object at 0x0320D9F0>
+	<CircularDoble.NodoDoble object at 0x0320D7B0> [label="<f0> |<f1> Dylan|<f2>"]
+	<CircularDoble.NodoDoble object at 0x0320D7B0> -> <CircularDoble.NodoDoble object at 0x031FDE30>
+	<CircularDoble.NodoDoble object at 0x0320D7B0> -> <CircularDoble.NodoDoble object at 0x0320DA10>
+	<CircularDoble.NodoDoble object at 0x031FDE30> [label="<f0> |<f1> Jimena|<f2>"]
+	<CircularDoble.NodoDoble object at 0x031FDE30> -> <CircularDoble.NodoDoble object at 0x03214730>
+	<CircularDoble.NodoDoble object at 0x031FDE30> -> <CircularDoble.NodoDoble object at 0x0320D7B0>
 }

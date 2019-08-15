@@ -33,7 +33,8 @@ while key != 27:
     if opcion == ord('2') :
         os.system("imagen2.jpg") 
     if opcion == ord('3'):
-        os.system("imagen3.jpg") 
+        window.addstr(17,22,'         ')
+        #os.system("imagen3.jpg") 
     if opcion == ord('4'):
         os.system("imagen4.jpg")      
     else:

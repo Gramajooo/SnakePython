@@ -27,11 +27,12 @@ pos_x = 5
 pos_y = 5               
 
 score = 0 
-user = lista.getNickname()
+user = " Tester Player "
 
 window.addstr(0,3," Score: " + str(score) + " ")  
-window.addstr(0,17," SNAKE RELOADED ")  
-window.addstr(0,37," User: " + user + " ")  
+window.addstr(0,17," SNAKE RELOADED ")
+window.addstr(1,17," NIVEL 1 ")   
+window.addstr(0,36," User: " + user + " ")  
 window.addch(pos_y,pos_x,'#')   
 ranx = randint(2,57)
 rany = randint(2,17)
@@ -47,13 +48,20 @@ for i in range(3):
     window.addch(pos_y, pos_x+i, '#')
 pos_x = 7
 
+nivel = 100
+
 while key != 27:                
     
-    window.timeout(100)         
+    window.timeout(nivel)         
     keystroke = window.getch() 
     if keystroke is not  -1:    
         key = keystroke 
-
+    if score > 15:
+        nivel = 10
+        window.addstr(1,17," NIVEL 2 ")  
+    if score < 15:
+        nivel = 100
+        window.addstr(1,17," NIVEL 1 ")  
     if pos_x == ranx and pos_y == rany:           
         score +=1
         window.addstr(0,3," Score: " + str(score) + " ")
