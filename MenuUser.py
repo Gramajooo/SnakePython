@@ -1,18 +1,18 @@
-import curses, os #import the curses library
+import curses, os 
 from curses import KEY_UP
 
-stdscr = curses.initscr() #initialize console
+stdscr = curses.initscr() 
 height = 25
 width = 65
 pos_y = 0
 pos_x = 0
-window = curses.newwin(height, width, pos_y, pos_x) #create a new curses window
-window.keypad(True)     #enable Keypad mode
+window = curses.newwin(height, width, pos_y, pos_x) 
+window.keypad(True)     
 curses.start_color()
-curses.noecho()         #prevent input from displaying in the screen
-curses.curs_set(0)      #cursor invisible (0)
-window.border(0)        #default border for our window
-window.nodelay(True)    #return -1 when no key is pressed
+curses.noecho()         
+curses.curs_set(0)      
+window.border(0)        
+window.nodelay(True)    
 
 key = KEY_UP
 
@@ -20,7 +20,7 @@ window.addstr(9,22,'1. New User')
 window.addstr(10,22,'2. Choose User')    
 
 while key != 27:
-    window.timeout(-2)    
+    window.timeout(-1)    
     opcion = window.getch()
     if opcion is not -1:  
         key = opcion        
@@ -34,7 +34,7 @@ while key != 27:
         window.timeout(1000) 
         window.getch()
         window.addstr(17,22,'         ')
-curses.endwin()
+
 
 
 

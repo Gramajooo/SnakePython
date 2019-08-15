@@ -1,20 +1,24 @@
-import curses, os, csv #import the curses library
+import curses, os, csv 
 from curses import KEY_UP
+from CircularDoble import CircularDoble
 
-stdscr = curses.initscr() #initialize console
+lista = CircularDoble()
+lista = lista.getLista()
+
+stdscr = curses.initscr() 
 height = 25
 width = 65
 pos_y = 0
 pos_x = 0
-window = curses.newwin(height, width, pos_y, pos_x) #create a new curses window
-window.keypad(True)     #enable Keypad mode
+window = curses.newwin(height, width, pos_y, pos_x) 
+window.keypad(True)     
 curses.start_color()
-curses.noecho()         #prevent input from displaying in the screen
-curses.curs_set(0)      #cursor invisible (0)
-window.border(0)        #default border for our window
-window.nodelay(True)    #return -1 when no key is pressed
+curses.noecho()         
+curses.curs_set(0)      
+window.border(0)        
+window.nodelay(True)    
 
-key = KEY_UP
+key = 0
 
 window.addstr(9,22,'1. Play')   
 window.addstr(10,22,'2. Scoreboard')   
@@ -23,7 +27,7 @@ window.addstr(12,22,'4. Reports')
 window.addstr(13,22,'5. Bulk Loading')  
 
 while key != 27:
-    window.timeout(-2)    
+    window.timeout(-1)    
     opcion = window.getch()
     if opcion is not -1:  
         key = opcion        
@@ -33,20 +37,20 @@ while key != 27:
     elif opcion == ord('2'):
         os.system("python Snake.py")
     elif opcion == ord('3'):
-        os.system("python Usuarios.py")  
+        os.system("python MenuUser.py")  
     elif opcion == ord('4'):
-        print("Reportes")
+        os.system("python Usuarios.py")
     elif opcion == ord('5'):
-        with open('usuarios.csv') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                print(row['Usuario;'])
+        lista.cargamasiva()
     else:
         window.addstr(17,22,'Invalido')
         window.timeout(1000) 
         window.getch()
         window.addstr(17,22,'         ')
+
+#lista.graf2()
 curses.endwin()
+
 
 
 
